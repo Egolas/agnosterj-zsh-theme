@@ -35,7 +35,7 @@ AGNOSTER_DEFAULT_OPTS=(
   AGNOSTER_RANDOM_EMOJI 🔥💀👑😎😜🤡🤖🥳👍😈👹🧠👖🍆🏋️‍♂️🐸🐵🦄🌈🍻🚀💡🎉🔑🇹🇭🚦🌙🛌🛎️
   AGNOSTER_RANDOM_EMOJI_EACH_PROMPT 0
   AGNOSTER_RANDOM_EMOJI_REALLY_RANDOM 1
-  AGNOSTER_PROMPT_SEGMENTS "status git context virtualenv vaulted dir kubecontext"
+  AGNOSTER_PROMPT_SEGMENTS "status virtualenv git context vaulted dir kubecontext"
 )
 typeset -ah AGNOSTER_KNOWN_SEGMENT_NAMES
 AGNOSTER_KNOWN_SEGMENT_NAMES=(
@@ -368,6 +368,7 @@ prompt_hg() {
 # Virtualenv: current working virtualenv
 prompt_virtualenv() {
   local env
+  local PYTHON_ICON=$'\ue73c'
   if [[ -z $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
     if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
       env="$CONDA_DEFAULT_ENV"
@@ -375,7 +376,7 @@ prompt_virtualenv() {
       env=`basename "$VIRTUAL_ENV"`
     fi
     if [[ -n "$env" ]]; then
-      prompt_segment blue black "($env)"
+      prompt_segment blue " ${PYTHON_ICON} $env "
     fi
   fi
 }
