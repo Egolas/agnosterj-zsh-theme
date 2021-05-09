@@ -366,6 +366,7 @@ prompt_hg() {
 }
 
 # Virtualenv: current working virtualenv
+
 prompt_virtualenv() {
   local env
   local PYTHON_ICON=$'\ue73c'
@@ -380,6 +381,7 @@ prompt_virtualenv() {
     fi
   fi
 }
+
 
 epoch_date() {
   unamestr=`uname`
