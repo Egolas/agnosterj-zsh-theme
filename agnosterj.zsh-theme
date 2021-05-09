@@ -377,7 +377,7 @@ prompt_virtualenv() {
       env=`basename "$VIRTUAL_ENV"`
     fi
     if [[ -n "$env" ]]; then
-      prompt_segment blue " ${PYTHON_ICON} $env "
+      prompt_segment blue black " ${PYTHON_ICON} $env "
     fi
   fi
 }
